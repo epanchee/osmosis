@@ -17,6 +17,7 @@ import (
 	gammv2types "github.com/osmosis-labs/osmosis/v17/x/gamm/v2types"
 
 	concentratedliquidityquery "github.com/osmosis-labs/osmosis/v17/x/concentrated-liquidity/client/queryproto"
+	cosmwasmpoolquery "github.com/osmosis-labs/osmosis/v17/x/cosmwasmpool/client/queryproto"
 	downtimequerytypes "github.com/osmosis-labs/osmosis/v17/x/downtime-detector/client/queryproto"
 	gammtypes "github.com/osmosis-labs/osmosis/v17/x/gamm/types"
 	incentivestypes "github.com/osmosis-labs/osmosis/v17/x/incentives/types"
@@ -167,6 +168,9 @@ func init() {
 	setWhitelistedQuery("/osmosis.concentratedliquidity.v1beta1.Query/IncentiveRecords", &concentratedliquidityquery.IncentiveRecordsResponse{})
 	setWhitelistedQuery("/osmosis.concentratedliquidity.v1beta1.Query/TickAccumulatorTrackers", &concentratedliquidityquery.TickAccumulatorTrackersResponse{})
 	setWhitelistedQuery("/osmosis.concentratedliquidity.v1beta1.Query/CFMMPoolIdLinkFromConcentratedPoolId", &concentratedliquidityquery.CFMMPoolIdLinkFromConcentratedPoolIdResponse{})
+
+	// cosmwasmpool
+	setWhitelistedQuery("/osmosis.cosmwasmpool.v1beta1.Query/ContractInfoByPoolId", &cosmwasmpoolquery.ContractInfoByPoolIdResponse{})
 }
 
 // GetWhitelistedQuery returns the whitelisted query at the provided path.
